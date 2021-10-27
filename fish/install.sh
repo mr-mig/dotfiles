@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+source "$(dirname "$0")/../script/_helpers.sh"
+install_fish_files () {
+  info 'installing fishfiles'
+
+  local overwrite_all=false backup_all=false skip_all=false
+
+  # link fish-specific files and directories
+  link_file ./fish/completions ~/.config/fish/completions
+  link_file ./fish/functions ~/.config/fish/functions
+  link_file ./fish/fish_plugins ~/.config/fish/fish_plugins
+}
 
 if [ $LINUX ]
 then
@@ -15,13 +26,23 @@ then
 fi
 
 cd "$(dirname $0)"/..
-# link fish-specific files and directories
-ln -s ./fish/completions ~/.config/fish/completions
-ln -s ./fish/functions ~/.config/fish/functions
-ln -s ./fish/fish_plugins ~/.config/fish/fish_plugins
+install_fish_files
 
-# install fisher
-fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+if [[ $(fish -c "fisher") ]];
+then
+  success "fisher installed"
+else
+  info "installing fisher"
+  # install fisher
+  fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+  success "fisher installed"
+fi
 
+info "updating fish plugins"
 # install plugins
-fish -c "fisher update"
+if fish -c "fisher update"
+then
+  success "updating fish plugins"
+else
+  fail "updating fish plugins"
+fi

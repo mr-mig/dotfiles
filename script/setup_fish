@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# Setup only fish shell
+
+source "$(dirname "$0")/_helpers.sh"
+cd "$(dirname $0)"/..
+
+[ $(uname -s) = "Darwin" ] && export MACOS=1 && export UNIX=1
+[ $(uname -s) = "Linux" ] && export LINUX=1 && export UNIX=1
+uname -s | grep -q "_NT-" && export WINDOWS=1
+
+info "setting up fish shell"
+if fish/install.sh
+then
+  success "fish setup complete"
+else
+  fail "fish setup failed"
+fi
