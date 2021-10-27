@@ -1,0 +1,40 @@
+# Local/private config goes in the include
+[include]
+    path = ~/.gitconfig.local
+[hub]
+    protocol = https
+[alias]
+    co = checkout
+    count   = !git shortlog -sn
+    # open all files changed in the current branch
+    openall = !$EDITOR $(git diff --name-only origin/master...)
+    # open all files from the last commit
+    openlast = !$EDITOR $(git diff --name-only HEAD~1)
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[core]
+    excludesfile = ~/.gitignore
+    autocrlf = input
+[apply]
+    whitespace = nowarn
+[mergetool]
+    keepBackup = false
+[difftool]
+    prompt = false
+[help]
+    autocorrect = 1
+[pull]
+    rebase = false
+[push]
+    # See `git help config` (search for push.default)
+    # for more information on different options of the below setting.
+    #
+    # Setting to git 2.0 default to suppress warning message
+    default = current
+[credential]
+    helper = osxkeychain
+[url "git@github.com:"]
+    insteadOf = https://github.com/
