@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 source "$(dirname "$0")/../script/_helpers.sh"
+export HOME_DOTFILES=$HOME/.dotfiles
+
 install_fish_files () {
   info 'installing fishfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
 
   # link fish-specific files and directories
-  link_file ./fish/completions ~/.config/fish/completions
-  link_file ./fish/functions ~/.config/fish/functions
-  link_file ./fish/fish_plugins ~/.config/fish/fish_plugins
+  link_file $HOME_DOTFILES/fish/completions ~/.config/fish/completions
+  link_file $HOME_DOTFILES/fish/functions ~/.config/fish/functions
+  link_file $HOME_DOTFILES/fish/fish_plugins ~/.config/fish/fish_plugins
 }
 
 if [ $LINUX ]
