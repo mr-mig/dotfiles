@@ -22,9 +22,17 @@ then
   chmod 700 /workspaces
 fi
 
-script/setup_gitconfig
-script/install_dotfiles
-script/install_deps
+if [ -n "$CODESPACES" ]
+then
+  # run only in codespaces
+  script/install_dotfiles
+  script/install_deps
+else
+  # run when not in codespaces
+  script/setup_gitconfig
+  script/install_dotfiles
+  script/install_deps
+fi
 
 echo ''
 echo '  All done!'
