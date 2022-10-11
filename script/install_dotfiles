@@ -10,7 +10,12 @@ DOTFILES_ROOT=$(pwd -P)
 install_dotfiles () {
   info 'installing dotfiles'
 
-  local overwrite_all=false backup_all=false skip_all=false
+  if [ -n "$CODESPACES" ]
+  then
+    local overwrite_all=false backup_all=true skip_all=false
+  else
+    local overwrite_all=false backup_all=false skip_all=false
+  fi
 
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do

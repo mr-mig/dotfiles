@@ -5,7 +5,12 @@ export HOME_DOTFILES=$HOME/.dotfiles
 install_fish_files () {
   info 'installing fishfiles'
 
-  local overwrite_all=false backup_all=false skip_all=false
+  if [ -n "$CODESPACES" ]
+  then
+    local overwrite_all=false backup_all=true skip_all=false
+  else
+    local overwrite_all=false backup_all=false skip_all=false
+  fi
 
   # link fish-specific files and directories
   link_file $HOME_DOTFILES/fish/completions ~/.config/fish/completions
