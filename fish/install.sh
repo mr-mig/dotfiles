@@ -11,6 +11,7 @@ install_fish_files () {
   link_file $HOME_DOTFILES/fish/completions ~/.config/fish/completions
   link_file $HOME_DOTFILES/fish/functions ~/.config/fish/functions
   link_file $HOME_DOTFILES/fish/fish_plugins ~/.config/fish/fish_plugins
+  link_file $HOME_DOTFILES/fish/config.fish ~/.config/fish/config.fish
 }
 
 if [ $LINUX ]
