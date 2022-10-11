@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source "$(dirname "$0")/../script/_helpers.sh"
-export HOME_DOTFILES=$HOME/.dotfiles
+export HOME_DOTFILES=$(realpath $(dirname "$0")/..)
 
 install_fish_files () {
   info 'installing fishfiles'
@@ -26,7 +26,7 @@ then
   apt-get install -y fish
 
   FISH_PATH=$(command -v fish)
-  # Always want to use ZSH as my default shell (e.g. for SSH)
+  # Always want to use fish as my default shell (e.g. for SSH)
   if ! grep -q "root.*/bin/fish" /etc/passwd
   then
     chsh -s $FISH_PATH root
@@ -54,3 +54,5 @@ then
 else
   fail "updating fish plugins"
 fi
+
+source ~/.config/fish/config.fish
