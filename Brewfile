@@ -56,7 +56,7 @@ cask "1password"
 cask "dash"
 
 # Command-line tool for GitHub
-cask "hub"
+brew "hub"
 
 # MacOS overlayed video player
 cask "iina"
@@ -72,3 +72,9 @@ cask "sequel-pro"
 
 # Text Editor
 cask "sublime-text"
+
+# Dropbox
+cask "dropbox"
+
+# VSCode
+cask "visual-studio-code"
