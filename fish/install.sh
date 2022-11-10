@@ -56,3 +56,9 @@ else
 fi
 
 source ~/.config/fish/config.fish
+
+info "Making fish a default shell"
+
+fish_add_path /opt/homebrew/bin
+echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
