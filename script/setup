@@ -9,7 +9,7 @@ cd "$(dirname $0)"/..
 echo 'Setting up dotfiles'
 echo ''
 
-export HOME_DOTFILES=$(realpath $(dirname "$0")/..)
+export HOME_DOTFILES=$(readlink -f $(dirname "$0")/..)
 success "Dotfiles directory is $HOME_DOTFILES"
 
 [ $(uname -s) = "Darwin" ] && export MACOS=1 && export UNIX=1
