@@ -99,6 +99,6 @@ alias rg="bin/rails generate"
 #	end
 #end
 
-nvm use default
+# nvm use default
 
 # status --is-interactive; and source (rbenv init -|psub)
