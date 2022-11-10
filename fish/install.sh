@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source "$(dirname "$0")/../script/_helpers.sh"
-export HOME_DOTFILES=$(realpath $(dirname "$0")/..)
+export HOME_DOTFILES=$(readlink -f $(dirname "$0")/..)
 
 install_fish_files () {
   info 'installing fishfiles'
