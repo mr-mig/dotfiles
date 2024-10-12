@@ -76,3 +76,6 @@ cask "dropbox"
 
 # VSCode
 cask "visual-studio-code"
+
+# Docker
+cask "docker"
