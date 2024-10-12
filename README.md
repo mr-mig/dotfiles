@@ -12,6 +12,9 @@ chmod -R 600 ~/.ssh/*
 Follow this steps to make an initial dotfiles setup:
 1. [Generate and add a new SSH key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 2. ```bash
+    xcode-select --install
+    ```
+3. ```bash
     mkdir -p ~/.dotfiles && cd ~/.dotfiles
     git clone git@github.com:mr-mig/dotfiles.git .
     script/setup
