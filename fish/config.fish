@@ -8,7 +8,7 @@ set -x CHROME_BIN "/Applications/Browser/Google Chrome.app/Contents/MacOS/Google
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias ls="exa"
+alias ls="eza"
 alias la="ls -Glah"
 
 alias old_dusage="du -h -d 0 * | sort -h -r"
