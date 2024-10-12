@@ -6,6 +6,7 @@ Dotfiles for my Mac and Codespaces setup
 If you have a shared home folder, symlink it first
 ```bash
 ln -s /path/to/shared/source ~/.ssh
+chmod -R 600 ~/.ssh/*
 ```
 
 Follow this steps to make an initial dotfiles setup:
