@@ -1,8 +1,6 @@
 tap "github/bootstrap"
 tap "github/packages"
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
 tap "homebrew/services"
 
 brew "coreutils", link: false
