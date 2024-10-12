@@ -17,7 +17,7 @@ brew "duf"
 brew "dust"
 
 # Modern replacement for 'ls'
-brew "exa"
+brew "eza"
 
 # Version Control
 brew "git"
