@@ -3,6 +3,11 @@ Dotfiles for my Mac and Codespaces setup
 # Setup
 
 ### On a fresh machine without git
+If you have a shared home folder, symlink it first
+```bash
+ln -s /path/to/shared/source ~/.ssh
+```
+
 Follow this steps to make an initial dotfiles setup:
 1. [Generate and add a new SSH key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 2. ```bash
