@@ -15,6 +15,10 @@ alias old_dusage="du -h -d 0 * | sort -h -r"
 alias dusage="dust -rs"
 alias whereismyspace="ncdu -x"
 
+function serve
+    npx http-server --port 8000 $argv
+end
+
 ###
 #  git
 ###
